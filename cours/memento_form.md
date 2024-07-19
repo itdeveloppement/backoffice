@@ -2,7 +2,7 @@
 Exemple pour un formulaire User
 
 ## dossier FormType
-Creer un dossier formType à la racine du dossier src
+Creer un dossier FormType à la racine du dossier src
 
 ## Fichier UserType
 Dans dossier FormTye créer un fichier UserType (choisir le nom en fonction de l'utilité du formulaire)
