@@ -38,6 +38,7 @@ class ProduitController extends AbstractController
         ]);
     }
 
+    // role : afficher le formulaire de creation d'un produit
     #[Route('/insert', name: 'produit_insert')]
     public function insert(Request $request, EntityManagerInterface $entityManager): Response
     {
@@ -77,6 +78,25 @@ class ProduitController extends AbstractController
         return $this->render('produit/form_produit.html.twig', [
             'form' => $form->createView(),
         ]);
+    }
+
+    // role : afficher le formulaire de modification d'un produit
+    #[Route('/update/{id}', name: 'produit_update')]
+    public function update(Produit $produit, Request $request, EntityManagerInterface $entityManager): Response
+    {
+        $form = $this->createForm(ProduitType::class, $produit);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $entityManager->flush();
+            
+        // Redirige après la modification
+        return $this->redirectToRoute('produit_list');
+    }
+        return $this->render('produit/form_produit.html.twig', [
+            'form' => $form->createView(),
+        ]);
+    }
 }
-}
+
 
