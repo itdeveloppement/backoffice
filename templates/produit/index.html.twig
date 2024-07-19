@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des produits{% endblock %}
+
+{% block content %}
+    <!-- Zone recherche -->
+    <div class="container-900">
+        <div class="flex justify-between mt-64">
+            <div></div>
+            <form id="search-bar" action="" method="POST" class="flex align-center">
+                <input type="search" name="search" id="search" class="search-bar">
+                <input type="submit" value="" class="picto picto-loupe">
+            </form>
+            <a href="{{path('produit_insert')}}" class="btn"><span class="picto picto-add"></span>Ajouter</a>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Référence</th>
+                    <th>Catégorie</th>
+                    <th>Libelle</th>
+                    <th>Prix</th>
+                    <th>En Stock</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody> 
+                {# boucle for pour twig#}
+                {% for produit in produits %}
+                <tr>
+                    <td>{{produit.ref ? produit.ref : "sans référence" }}</td>
+                    <td>{{ produit.categorie ? produit.categorie.nom : 'Sans catégorie' }}</td>
+                    <td>{{produit.description ? produit.description : "sans description" }}</td>
+                    <td>{{produit.prix ? produit.prix : "sans dprix"}}</td>
+                    <td>
+                        <div class="stock stock-ok">{{produit.status}}</div>
+                    </td>
+                    <td>
+                        <a href="{{path('produit_detail',{'id':produit.id})}}">Detail<span class="picto picto-eye"></span></a>
+                        <a href=""><span class="picto picto-edit"></span></a>
+                        <a href=""><span class="picto picto-delete"></span></a>
+                    </td>
+                </tr>
+                {% endfor %}
+                
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

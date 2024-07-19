@@ -1,0 +1,43 @@
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajouter un produit{% endblock %}
+
+{% block titreh1 %} <h1>Ajouter un produit</h1> {% endblock %}
+
+{% block content %}
+<div class="container-900">
+    {{form_start(form, {
+        attr:{
+            'id':'creation',
+            'class':'flex justify-between',
+            'novalidate': 'novalide'
+            }
+    }) }}
+    <div class="large-6">
+    <div>
+        {{form_row(form.ref)}}
+     </div>
+        {{form_row(form.categorie)}}
+        {{form_row(form.nom)}}
+        {{form_row(form.prix)}}
+        {{form_row(form.photo)}}
+
+        {% if form_errors(form.photo) %}
+        <div class="has-errors">
+            {{ form_errors(form.photo) }}
+        </div>
+        {% endif %}
+
+    </div>
+    <div class="large-6">
+        {{form_row(form.description)}}
+        {{form_row(form.status)}}
+       
+        <div class="text-right">
+            {{ form_row(form.Enregistrer) }}
+        </div>
+    </div>
+    {{form_end(form)}}
+</div>  
+{% endblock %}

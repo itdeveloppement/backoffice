@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="flex">
+        <nav class="lateral">
+            <div class="logo">
+                <img src="./img/Logo.png" alt="">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href=""><span class="picto picto-compta"></span>Comptabilité</a></li>
+                    <li class="active-link"><a href=""><span class="picto picto-produits"></span>Produits</a></li>
+                    <li><a href=""><span class="picto picto-fournisseurs"></span>Fournisseurs</a></li>
+                    <li><a href=""><span class="picto picto-commandes"></span>Commandes</a></li>
+                    <li><a href=""><span class="picto picto-parametres"></span>Paramètres</a></li>
+                </ul>
+            </nav>
+        </nav>
+        <div class="main-content">
+            <header>
+                <h1>Liste des produits</h1>
+            </header>
+            <!-- Zone recherche -->
+            <div class="container-900">
+                <div class="flex justify-between mt-64">
+                    <div></div>
+                    <form id="search-bar" action="" method="POST" class="flex align-center">
+                        <input type="search" name="search" id="search" class="search-bar">
+                        <input type="submit" value="" class="picto picto-loupe">
+                    </form>
+                    <a href="ajouter.html" class="btn"><span class="picto picto-add"></span>Ajouter</a>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Référence</th>
+                            <th>Catégorie</th>
+                            <th>Libelle</th>
+                            <th>Prix</th>
+                            <th>En Stock</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!--  
+                        <tr>
+                            <td>ref123456</td>
+                            <td>Tee shirt</td>
+                            <td>Tee shirt run extrem homme coton col en v</td>
+                            <td>24€</td>
+                            <td>
+                                <div class="stock stock-ok"></div>
+                            </td>
+                            <td>
+                                <a href="vueProduit"><span class="picto picto-eye"></span></a>
+                                <a href=""><span class="picto picto-edit"></span></a>
+                                <a href=""><span class="picto picto-delete"></span></a>
+                            </td>
+                        </tr>
+                        -->
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="liste.js"></script>
+</body>
+
+</html>

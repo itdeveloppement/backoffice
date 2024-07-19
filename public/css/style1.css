@@ -1,0 +1,250 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+.lateral{
+    width: 250px;
+    background-color: #323232;
+    height: calc(100vh);
+}
+.lateral nav{
+    margin-top: 64px;
+}
+.lateral nav ul li{
+    margin-top: 16px;   
+    list-style: none;
+    padding-left: 16px;
+    
+}
+.lateral nav ul li a {
+    display: flex;
+    align-items: center;
+}
+
+.lateral nav li.active-link{
+    padding-left:12px ;
+    border-left: 4px solid;
+    border-color:#F0515A;
+}
+header{
+    width: 100%;
+    background-color: #F0515A;
+    padding : 24px 64px;  
+}
+h1{
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 22px;
+}
+.text-right{
+    text-align: right;
+}
+.main-content{
+    width : calc(100% - 250px);  
+}
+.picto{
+    width : 24px;
+    height: 24px;
+    display: inline-block;
+    background-image: url("./img/sprite.png");
+    background-repeat: no-repeat;
+    margin-right: 8px;
+}
+
+.pitco-compta{
+    background-position: 0 0;
+}
+.picto-produits{
+    background-position: -32px 0;
+}
+
+.picto-fournisseurs{
+    background-position: -64px 0;
+}
+.picto-parametres{
+    background-position: -96px 0;
+}
+.picto-eye{
+    background-position: -128px 0;
+}
+.picto-edit{
+    background-position: -160px 0;
+}
+.picto-delete{
+    background-position: -192px 0;
+}
+.picto-save{
+    background-position: -224px 0;
+}
+
+.picto-add{
+    background-position: -256px 0;
+}
+.picto-retour{
+    background-position: -288px 0;
+}
+
+.picto-loupe{
+    background-position: -320px 0;
+}
+.picto-commandes{
+    background-position: -352px 0;
+}
+.stock{
+    width : 16px;
+    height: 16px;
+    border-radius: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.stock-ok{
+    background-color: green;
+}
+.stock-nok{
+    background-color: red;
+}
+
+
+a.btn, nav a{
+    color: #fff;
+    text-decoration: none;
+}
+.btn{
+    display :inline-flex;
+    background-color: #F0515A;
+    align-items: center;
+    padding : 8px 18px
+}
+
+.btn-retour{
+    border: 2px solid #fff;
+}
+
+.searchbar{
+    border-radius: none;
+}
+
+/*Flex et colonnes*/
+.flex{
+    display: flex;
+    flex-wrap: wrap;
+}
+.justify-between{
+    justify-content: space-between;
+}
+.align-center{
+    align-items: center;
+}
+.container-900{
+    width : 100%;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.large-6{
+    width : 43%;
+}
+.large-4{
+    width: 30%;
+}
+.large-8{
+    width: 60%;
+}
+
+/* images responsive*/
+.responsive{
+    width: 100%;
+    height: auto;
+}
+
+/*Table*/
+table{
+    width : 100%;
+    margin-top: 64px;
+    border-collapse: collapse;
+}
+th{
+    text-align: left;
+}
+th,td{
+    padding: 8px;
+}
+tbody tr:hover{
+    background-color: #feeeef;
+}
+thead{
+    background-color: #323232;
+    color: #fff;
+}
+
+
+/*Margins*/
+.mt-64{
+    margin-top: 64px;
+}
+
+.mt-16{
+    margin-top: 16px;
+}
+
+/*Form acceuil*/
+#search-bar input{
+    border: none;
+    background-color: #fff;
+}
+input#search{
+    width: calc(100% - 32px);
+}
+#search-bar{
+    border : solid 1px #808080;
+    width: 50%;
+}
+
+/*Form creer un produit*/
+#creation input,#creation select{
+    height: 32px;
+    padding : 8px 16px;
+    margin-top: 8px;
+}
+#creation input[type="checkbox"]{
+    width : 16px;
+    height: 16px;
+    margin-top: 0;
+    margin-right: 16px;
+}
+#creation div{
+    margin-top: 32px;
+}
+#creation label,#creation select, #creation input, #creation textarea{
+    display: block;
+    width: 100%;
+}
+#stock ~ label{
+   width:50%;
+}
+
+#creation textarea{
+    height: 150px;
+}
+#creation button{
+    border: none;
+    color: #fff;
+    font-weight: bold;
+}
+.badge{
+    padding: 8px 16px;
+    background-color: #feeeef;
+    text-align: center;
+    margin-top: 8px;
+}
+.prix{
+    font-size: 32px;
+}
+
+.fournisseur-link{
+    display: inline-block;
+    color:#F0515A;
+    text-decoration: underline;
+}

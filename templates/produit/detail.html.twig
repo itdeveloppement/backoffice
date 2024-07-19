@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Detail d'un produit{% endblock %}
+
+{% block titreh1 %} <h1>Detail d'un produit</h1> {% endblock %}
+
+{% block content %}
+
+    <div class="container-900 mt-64" id="container">
+        <div class="flex justify-between align-center">
+            <div class="large-4">
+                <img src="{{ asset('images/imagesProduits/' ~ produit.photo) }}" alt="">
+            </div>
+            <div class="large-8">
+                <div class="flex justify-between">
+                    <h2>Libellé du produit</h2>
+                    <div class="flex">
+                        <div class="stock stock-ok"></div>
+                        <p>En stock</p>
+                    </div>
+                </div>
+                <div class="flex justify-between align-center mt-16">
+                    <div>
+                        <p><b>Référence :</b>{{produit.ref}}</p>
+                        <div class="badge">{{produit.categorie.nom}}</div>
+                    </div>
+                    <div>
+                        <p class="prix">{{produit.prix}} €</p>
+                    </div>
+                </div>
+                <p class="mt-16">{{produit.description}}</p>
+                <a href="" class="fournisseur-link mt-16">Nom du fournisseur</a>
+            </div>
+        </div>
+    </div>
+    
+{% endblock %}

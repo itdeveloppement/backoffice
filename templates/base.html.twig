@@ -4,14 +4,44 @@
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
+        <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+
         {% block stylesheets %}
         {% endblock %}
 
-        {% block javascripts %}
-            {% block importmap %}{{ importmap('app') }}{% endblock %}
-        {% endblock %}
     </head>
+
     <body>
-        {% block body %}{% endblock %}
+    {% block body %}   
+        <div class="flex">
+            <nav class="lateral">
+                <div class="logo">
+                    <img src="./img/Logo.png" alt="">
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href=""><span class="picto picto-compta"></span>Comptabilité</a></li>
+                        <li class="active-link"><a href="{{path('produit_index')}}"><span class="picto picto-produits"></span>Produits</a></li>
+                        <li><a href=""><span class="picto picto-fournisseurs"></span>Fournisseurs</a></li>
+                        <li><a href=""><span class="picto picto-commandes"></span>Commandes</a></li>
+                        <li><a href=""><span class="picto picto-parametres"></span>Paramètres</a></li>
+                    </ul>
+                </nav>
+            </nav>
+            <div class="main-content">
+                <header>
+                  {% block titreh1 %} <h1>Liste des produits</h1> {% endblock %}
+                </header>
+                {% block content %}
+                {% endblock %}
+            </div>
+        </div>
+
+        <!-- chargement des scriptee -->
+        {% block javascripts %}
+         <script src="{{asset('js/app.js') }}"></script>
+        {% endblock %}
+
+    {% endblock %}
     </body>
 </html>
