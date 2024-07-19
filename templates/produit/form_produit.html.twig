@@ -23,12 +23,6 @@
         {{form_row(form.prix)}}
         {{form_row(form.photo)}}
 
-        {% if form_errors(form.photo) %}
-        <div class="has-errors">
-            {{ form_errors(form.photo) }}
-        </div>
-        {% endif %}
-
     </div>
     <div class="large-6">
         {{form_row(form.description)}}

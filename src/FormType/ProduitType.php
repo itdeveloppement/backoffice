@@ -83,8 +83,10 @@ public function buildForm(FormBuilderInterface $builder, array $options)
     ])
 
     // champ photo du produit
-    ->add ("photo", TextType::class,[
-        'label' => "Photo",
+    ->add ("photo", FileType::class,[
+        'label' => 'Photo',
+        'required' => false,
+        'data_class' => null,
 
         // contrainte de validation des champs
         'constraints' => [

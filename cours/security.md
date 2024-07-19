@@ -1,3 +1,15 @@
+# creation user security
+symfony console make:user
+symfony console make:migration
+symfony make console d:m:m
+
+# creation de compte
+symfony console make:registration-form
+
+# autentification
+symfony console make:security:form-login
+
+# modifier dans conf / pakages / secyrity.yaml
 security:
     # https://symfony.com/doc/current/security.html#registering-the-user-hashing-passwords
     password_hashers:
@@ -21,11 +33,12 @@ security:
                 check_path: app_login
                 enable_csrf: true
                 # une fois que je suis loguer je vais vers 
-                default_target_path: app_app
+                default_target_path: app
+
             logout:
                 path: app_logout
                 # where to redirect after logout
-                target: app_app
+                target: login
 
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#the-firewall
@@ -51,3 +64,18 @@ when@test:
                 cost: 4 # Lowest possible value for bcrypt
                 time_cost: 3 # Lowest possible value for argon
                 memory_cost: 10 # Lowest possible value for argon
+
+
+# Modifier dans RegisterControleeur 
+return $this->redirectToRoute('app_login');
+
+
+route register
+login
+
+
+
+On stock dans un tableau json le role dans la table role
+
+un uilisateur connecté a toujours ele role user
+un admin a un role user et admin

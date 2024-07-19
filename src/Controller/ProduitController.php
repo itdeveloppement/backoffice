@@ -84,10 +84,24 @@ class ProduitController extends AbstractController
     #[Route('/update/{id}', name: 'produit_update')]
     public function update(Produit $produit, Request $request, EntityManagerInterface $entityManager): Response
     {
+        // dd($produit);
+        // creation du formulaire avec les données du rpoduit
         $form = $this->createForm(ProduitType::class, $produit);
+        // analyse la requette pour savoir si le formulaire a était soumis
         $form->handleRequest($request);
 
+        // si le formulaire est soumis et valdé
         if ($form->isSubmitted() && $form->isValid()) {
+
+            $file = $form->get('photo')->getData();
+
+            if ($file) {
+                $fileName = uniqid().'.'.$file->guessExtension();
+                $file->move($this->getParameter('imagesProduits'), $fileName);
+                $produit->setPhoto($fileName);
+            }
+
+
             $entityManager->flush();
             
         // Redirige après la modification
